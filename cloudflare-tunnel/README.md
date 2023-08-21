@@ -4,8 +4,11 @@ This is very basic example how you can run Zero Trust Tunnel on nomad to proxy *
 
 
 cftunnel - docker container with params from cloudflare tunnel config
+
 nginx - real app 
+
 traefik - internal load balancer
+
 
 
 //TODO: explain how to create wildcard CloudFlare tunnel
@@ -20,9 +23,11 @@ docker network create --driver=bridge --subnet=192.168.255.0/24 --ip-range=192.1
 `
 
 Weave networks variant ( alternative way ):
+
 if you want to run this on few server, you can use "weave" overlay network. Here is example of how to start it:
 
 download weave script
+
 ```
 sudo curl -L git.io/weave -o /usr/local/bin/weave
 sudo chmod a+x /usr/local/bin/weave
