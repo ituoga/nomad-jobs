@@ -2,7 +2,14 @@ job "traefik" {
   type = "service"
 
 
-  group "nomad-socket" {
+  group "nomad-proxy" {
+
+    // uncomment this and add on nomad server meta.roles = [nomad-proxy]
+    // constraint {
+    //   attribute = "${meta.roles}"
+    //   operator  = "set_contains_any"
+    //   value     = "nomad-proxy"
+    // }
 
     // remove socket if exists
     task "hook" {
